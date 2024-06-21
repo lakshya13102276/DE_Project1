@@ -29,7 +29,7 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": true,
+						"sqlWriterUseTableLock": false,
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -68,8 +68,8 @@
 								},
 								"sink": {
 									"name": "nbr_match",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -80,8 +80,8 @@
 								},
 								"sink": {
 									"name": "wkts",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -104,10 +104,8 @@
 								},
 								"sink": {
 									"name": "avg_b",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 3,
-									"precision": 5
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -118,10 +116,8 @@
 								},
 								"sink": {
 									"name": "econ",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 3,
-									"precision": 5
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -132,10 +128,8 @@
 								},
 								"sink": {
 									"name": "sr",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 3,
-									"precision": 5
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -146,8 +140,8 @@
 								},
 								"sink": {
 									"name": "five_wkt",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -158,10 +152,8 @@
 								},
 								"sink": {
 									"name": "w_per_ovr",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 5,
-									"precision": 6
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -180,7 +172,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "bowling",
+						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
 					}
 				]
