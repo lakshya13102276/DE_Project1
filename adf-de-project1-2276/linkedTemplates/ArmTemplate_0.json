@@ -123,6 +123,27 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "stg",
+					"table": "bowling"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -354,7 +375,7 @@
 							"sink": {
 								"type": "AzureSqlSink",
 								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": true,
+								"sqlWriterUseTableLock": false,
 								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
@@ -393,8 +414,8 @@
 										},
 										"sink": {
 											"name": "nbr_match",
-											"type": "Int32",
-											"physicalType": "int"
+											"type": "String",
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -405,8 +426,8 @@
 										},
 										"sink": {
 											"name": "wkts",
-											"type": "Int32",
-											"physicalType": "int"
+											"type": "String",
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -429,10 +450,8 @@
 										},
 										"sink": {
 											"name": "avg_b",
-											"type": "Decimal",
-											"physicalType": "decimal",
-											"scale": 3,
-											"precision": 5
+											"type": "String",
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -443,10 +462,8 @@
 										},
 										"sink": {
 											"name": "econ",
-											"type": "Decimal",
-											"physicalType": "decimal",
-											"scale": 3,
-											"precision": 5
+											"type": "String",
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -457,10 +474,8 @@
 										},
 										"sink": {
 											"name": "sr",
-											"type": "Decimal",
-											"physicalType": "decimal",
-											"scale": 3,
-											"precision": 5
+											"type": "String",
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -471,8 +486,8 @@
 										},
 										"sink": {
 											"name": "five_wkt",
-											"type": "Int32",
-											"physicalType": "int"
+											"type": "String",
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -483,10 +498,8 @@
 										},
 										"sink": {
 											"name": "w_per_ovr",
-											"type": "Decimal",
-											"physicalType": "decimal",
-											"scale": 5,
-											"precision": 6
+											"type": "String",
+											"physicalType": "varchar"
 										}
 									}
 								],
@@ -506,7 +519,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "bowling",
+								"referenceName": "AzureSqlTable2",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -520,7 +533,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
-				"[concat(variables('factoryId'), '/datasets/bowling')]"
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]"
 			]
 		},
 		{
