@@ -1,0 +1,26 @@
+{
+	"name": "scheduled_bowling",
+	"properties": {
+		"description": "Trigger Bowling DB copy every time data is updated.",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-06-21T19:03:00",
+				"endTime": "2024-06-28T19:03:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}
