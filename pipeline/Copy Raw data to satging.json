@@ -247,24 +247,48 @@
 							},
 							{
 								"source": {
-									"name": "Wkts",
+									"name": "Inns",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "wkts",
+									"name": "inns",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "BBI",
+									"name": "NO",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "bbi",
+									"name": "not_outs",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Runs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_runs",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "HS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "hs",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -276,19 +300,19 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "avg_b",
+									"name": "avg_run",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Econ",
+									"name": "Balls",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "econ",
+									"name": "ball_faced",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -300,31 +324,150 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "sr",
+									"name": "sr_bat",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "5WI",
+									"name": "100s",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "five_wkt",
+									"name": "hundred",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "W/O %ge",
+									"name": "50s",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "w_per_ovr",
+									"name": "fifty",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "4s",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "fours",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "6s",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "sixes",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Ct",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "catches",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "St",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "stumping",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "C/M",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "catch_per_match",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "6/I",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "country",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Player of the series",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "player_of_tournament",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Top Scorer",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "top_scorer",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Highest Wickets",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "highest_wkts",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "any_trophy",
+									"type": "String"
+								},
+								"sink": {
+									"name": "anything",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -339,7 +482,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText4",
 						"type": "DatasetReference"
 					}
 				],
@@ -385,120 +528,132 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Player_id",
+									"name": "Final_nbr",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "palyer_id",
+									"name": "final_id",
 									"type": "Int32",
 									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
-									"name": "Player",
+									"name": "Date",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "player_name",
+									"name": "date_final",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Match",
+									"name": "Number of Participants",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "nbr_match",
+									"name": "nbr_teams",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Wkts",
+									"name": "Format",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "wkts",
+									"name": "game_format",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "BBI",
+									"name": "Winner",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "bbi",
+									"name": "winner",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Avg",
+									"name": "RunnerUp",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "avg_b",
+									"name": "runner_up",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "Econ",
+									"name": "Toss",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "econ",
+									"name": "toss_win",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "SR",
+									"name": "Bowling",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "sr",
+									"name": "bowling_select",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "5WI",
+									"name": "Top Scorer",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "five_wkt",
+									"name": "player_top_scorer",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "W/O %ge",
+									"name": "Highest Wk",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "w_per_ovr",
+									"name": "player_top_wkts",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Player of the Series",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "player_series",
 									"type": "String",
 									"physicalType": "varchar"
 								}
