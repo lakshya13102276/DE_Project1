@@ -1,0 +1,112 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "cricket_bating.csv",
+				"fileSystem": "bronze-project1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Player_id",
+				"type": "String"
+			},
+			{
+				"name": "Player",
+				"type": "String"
+			},
+			{
+				"name": "Match",
+				"type": "String"
+			},
+			{
+				"name": "Inns",
+				"type": "String"
+			},
+			{
+				"name": "NO",
+				"type": "String"
+			},
+			{
+				"name": "Runs",
+				"type": "String"
+			},
+			{
+				"name": "HS",
+				"type": "String"
+			},
+			{
+				"name": "Avg",
+				"type": "String"
+			},
+			{
+				"name": "Balls",
+				"type": "String"
+			},
+			{
+				"name": "SR",
+				"type": "String"
+			},
+			{
+				"name": "100s",
+				"type": "String"
+			},
+			{
+				"name": "50s",
+				"type": "String"
+			},
+			{
+				"name": "4s",
+				"type": "String"
+			},
+			{
+				"name": "6s",
+				"type": "String"
+			},
+			{
+				"name": "Ct",
+				"type": "String"
+			},
+			{
+				"name": "St",
+				"type": "String"
+			},
+			{
+				"name": "C/M",
+				"type": "String"
+			},
+			{
+				"name": "6/I",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "Player of the series",
+				"type": "String"
+			},
+			{
+				"name": "Top Scorer",
+				"type": "String"
+			},
+			{
+				"name": "Highest Wickets",
+				"type": "String"
+			}
+		]
+	}
+}
