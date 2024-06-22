@@ -53,13 +53,13 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"name": "[concat(parameters('factoryName'), '/Copy Raw data to satging')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "pp-stg-bowling",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -85,8 +85,7 @@
 							"sink": {
 								"type": "AzureSqlSink",
 								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false,
-								"disableMetricsCollection": false
+								"sqlWriterUseTableLock": false
 							},
 							"enableStaging": false,
 							"translator": {
@@ -229,7 +228,359 @@
 						],
 						"outputs": [
 							{
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "pp-stg-bating",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Player_id",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "palyer_id",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Player",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "player_name",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Match",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "nbr_match",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Wkts",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "wkts",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "BBI",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "bbi",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Avg",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "avg_b",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Econ",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "econ",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "SR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "sr",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "5WI",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "five_wkt",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "W/O %ge",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "w_per_ovr",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
 								"referenceName": "AzureSqlTable2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "pp-stg-tour",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Player_id",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "palyer_id",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "Player",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "player_name",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Match",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "nbr_match",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Wkts",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "wkts",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "BBI",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "bbi",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Avg",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "avg_b",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "Econ",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "econ",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "SR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "sr",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "5WI",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "five_wkt",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									},
+									{
+										"source": {
+											"name": "W/O %ge",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "w_per_ovr",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DelimitedText3",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable3",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -243,7 +594,11 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]"
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable3')]"
 			]
 		},
 		{
@@ -258,7 +613,10 @@
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
-				"typeProperties": {}
+				"typeProperties": {
+					"schema": "stg",
+					"table": "bowling"
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
@@ -278,7 +636,28 @@
 				"schema": [],
 				"typeProperties": {
 					"schema": "stg",
-					"table": "bowling"
+					"table": "bating"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "stg",
+					"table": "tournament_wins"
 				}
 			},
 			"dependsOn": [
@@ -363,24 +742,201 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/bowling')]",
+			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
+					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
+				"type": "DelimitedText",
 				"typeProperties": {
-					"schema": "crkt",
-					"table": "bowling"
-				}
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "cricket_bating.csv",
+						"fileSystem": "bronze-project1"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Player_id",
+						"type": "String"
+					},
+					{
+						"name": "Player",
+						"type": "String"
+					},
+					{
+						"name": "Match",
+						"type": "String"
+					},
+					{
+						"name": "Inns",
+						"type": "String"
+					},
+					{
+						"name": "NO",
+						"type": "String"
+					},
+					{
+						"name": "Runs",
+						"type": "String"
+					},
+					{
+						"name": "HS",
+						"type": "String"
+					},
+					{
+						"name": "Avg",
+						"type": "String"
+					},
+					{
+						"name": "Balls",
+						"type": "String"
+					},
+					{
+						"name": "SR",
+						"type": "String"
+					},
+					{
+						"name": "100s",
+						"type": "String"
+					},
+					{
+						"name": "50s",
+						"type": "String"
+					},
+					{
+						"name": "4s",
+						"type": "String"
+					},
+					{
+						"name": "6s",
+						"type": "String"
+					},
+					{
+						"name": "Ct",
+						"type": "String"
+					},
+					{
+						"name": "St",
+						"type": "String"
+					},
+					{
+						"name": "C/M",
+						"type": "String"
+					},
+					{
+						"name": "6/I",
+						"type": "String"
+					},
+					{
+						"name": "Country",
+						"type": "String"
+					},
+					{
+						"name": "Player of the series",
+						"type": "String"
+					},
+					{
+						"name": "Top Scorer",
+						"type": "String"
+					},
+					{
+						"name": "Highest Wickets",
+						"type": "String"
+					}
+				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "cricket_tour.csv",
+						"fileSystem": "bronze-project1"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Final_nbr",
+						"type": "String"
+					},
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "Number of Participants",
+						"type": "String"
+					},
+					{
+						"name": "Format",
+						"type": "String"
+					},
+					{
+						"name": "Venue",
+						"type": "String"
+					},
+					{
+						"name": "Venue Choice",
+						"type": "String"
+					},
+					{
+						"name": "Winner",
+						"type": "String"
+					},
+					{
+						"name": "RunnerUp",
+						"type": "String"
+					},
+					{
+						"name": "Toss",
+						"type": "String"
+					},
+					{
+						"name": "Bowling",
+						"type": "String"
+					},
+					{
+						"name": "Top Scorer",
+						"type": "String"
+					},
+					{
+						"name": "Highest Wk",
+						"type": "String"
+					},
+					{
+						"name": "Player of the Series",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
 			]
 		},
 		{
@@ -543,16 +1099,8 @@
 			"properties": {
 				"description": "Trigger Bowling DB copy every time data is updated.",
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "pipeline1",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
+				"runtimeState": "Stopped",
+				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -560,13 +1108,12 @@
 						"interval": 1,
 						"startTime": "2024-06-21T19:03:00",
 						"endTime": "2024-06-28T19:03:00",
-						"timeZone": "Eastern Standard Time"
+						"timeZone": "Eastern Standard Time",
+						"schedule": {}
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pipeline1')]"
-			]
+			"dependsOn": []
 		}
 	]
 }
