@@ -11,6 +11,9 @@
 		"AzureSqlDatabase2_password": {
 			"value": ""
 		},
+		"SqlServer1_password": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://saprojectone.dfs.core.windows.net/"
 		},
@@ -33,6 +36,15 @@
 			"value": "lakshyadeproject1db"
 		},
 		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "rootlakshya"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "lakshyadeproject1"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "lakshyadeproject1db"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
 			"value": "rootlakshya"
 		}
 	}
