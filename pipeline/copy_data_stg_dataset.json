@@ -29,11 +29,35 @@
 				}
 			},
 			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "lookup_file_stg",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "lookupOutput",
+					"value": {
+						"value": "@activity('lookup_file_stg').output.value",
+						"type": "Expression"
+					}
+				}
+			},
+			{
 				"name": "ForEach1",
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "lookup_file_stg",
+						"activity": "Set variable1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -69,7 +93,7 @@
 											"type": "Expression"
 										},
 										"wildcardFileName": {
-											"value": "@concat(item().filename_prefix_src,'*')",
+											"value": "@item().filename_prefix_src",
 											"type": "Expression"
 										},
 										"enablePartitionDiscovery": false
@@ -116,6 +140,11 @@
 				}
 			}
 		],
+		"variables": {
+			"lookupOutput": {
+				"type": "Array"
+			}
+		},
 		"annotations": []
 	}
 }
