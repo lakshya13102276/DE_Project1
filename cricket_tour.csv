@@ -1,0 +1,18 @@
+final_id,date_final,nbr_teams,game_format,venue,venue_choice,winner,runner_up,toss_win,bowling_select,player_top_scorer,player_top_wkts,player_series
+1,"Sunday, February 11, 2024",4,T10,MCG,Sid,Sid,Lakshya,Sid,Yes,Aaron Finch,Rashid Khan,Rashid Khan
+2,"Friday, February 23, 2024",3,T10,,,Shivam,Param,,,,,
+3,"Saturday, March 02, 2024",3,T10,,,Shivam,Lakshya,,,,,
+4,"Friday, March 08, 2024",3,T10,Kia Oval,Param,Shivam,Param,Shivam,Yes,jason Roy,Adil Rashid,Adil Rashid
+5,"Thursday, March 14, 2024",3,T10,,,Shivam,Param,,,,,
+6,"Friday, March 15, 2024",3,T10,Sabina Park,Lakshya,Lakshya,Shivam,Shivam,Yes,Chris Gayle,Adil Rashid,Rashid Khan
+7,"Monday, March 18, 2024",3,T10,Lords,Shivam,Lakshya,Shivam,Lakshya,Yes,jason Roy,Rashid Khan,Rashid Khan
+8,"Wednesday, March 20, 2024",3,T10,Lords,Param,Param,Lakshya,Lakshya,Yes,jason Roy,Md Amir,Ashwin
+9,"Thursday, March 28, 2024",3,T10,Dubai,Lakshya,Shivam,Lakshya,Shivam,Yes,Ben Stokes,Naraine,Ben Stokes
+10,"Tuesday, April 02, 2024",3,T10,Sabina Park,Lakshya,Lakshya,Param,Lakshya,No,Hardik Pandya,Zampa,Hardik pandya
+11,"Friday, April 12, 2024",3,T10,MCG,Lakshya,Lakshya,Param,Lakshya,Yes,David Warner,Chris Gayle,Chris Gayle
+12,"Sunday, April 14, 2024",3,T10,Sabina Park,Shivam,Shivam,Param,Shivam,Yes,Johnny Bairstow,Ashwin,Ashwin
+13,"Wednesday, April 17, 2024",3,T10,Lords,Param,Param,Lakshya,Param,Yes,Aaron Finch,Kuldeep Yadav,Aaron Finch
+14,"Thursday, May 02, 2024",3,T10,Sabina Park,Lakshya,Lakshya,Shivam,Shivam,Yes,Guptil,Axar Patel,Guptil
+15,"Wednesday, May 15, 2024",3,T10,Delhi Park,Shivam,Param,Shivam,Shivam,Yes,Guptil,Chris Gayle,Chris Gayle
+16,"Monday, May 20, 2024",3,T10,Sabina Park,Lakshya,Lakshya,Shivam,Lakshya,No,Asif Ali,Axar Patel,Jadeja
+17,"Saturday, May 25, 2024",3,T10,Sabina Park,Lakshya,Lakshya,Shivam,Lakshya,No,Ashwin,Rashid Khan,Rashid Khan
