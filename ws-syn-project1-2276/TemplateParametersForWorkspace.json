@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "ws-syn-project1-2276"
+		},
+		"ws-syn-project1-2276-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:ws-syn-project1-2276.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"ws-syn-project1-2276-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://saprojectone.dfs.core.windows.net"
+		}
+	}
+}
