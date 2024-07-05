@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "https://saprojectone.dfs.core.windows.net/"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0621-042600-knehz7v0"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kv-project1-ls.vault.azure.net/"
@@ -50,10 +54,6 @@
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "rootlakshya"
-		},
-		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
-			"type": "string",
-			"defaultValue": "0621-042600-knehz7v0"
 		},
 		"containerUri": {
 			"type": "string",
