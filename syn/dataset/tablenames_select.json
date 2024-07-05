@@ -1,0 +1,17 @@
+{
+	"name": "tablenames_select",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ws-syn-project1-2276-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "gold-project1"
+			}
+		}
+	}
+}

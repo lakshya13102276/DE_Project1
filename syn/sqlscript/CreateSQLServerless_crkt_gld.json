@@ -1,5 +1,5 @@
 {
-	"name": "storedproc_views_tables",
+	"name": "CreateSQLServerless_crkt_gld",
 	"properties": {
 		"content": {
 			"query": "USE cricket_db;\nGO\n\nCREATE OR ALTER PROCEDURE CreateSQLServerless_crkt_gld \n    @viewname NVARCHAR(100)\nAS\nBEGIN\n    DECLARE @statement NVARCHAR(MAX);\n    \n    SET @statement = N'\n        CREATE OR ALTER VIEW ' + @viewname + ' AS\n        SELECT *\n        FROM OPENROWSET(\n            BULK ''https://saprojectone.dfs.core.windows.net/gold-project1/bating/''' + @viewname + ''''',\n            FORMAT = ''DELTA''\n        ) AS [result]';\n    \nexec (@statement);\nEND;\nGO\n",
