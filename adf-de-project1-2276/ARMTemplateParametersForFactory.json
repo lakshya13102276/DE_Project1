@@ -20,15 +20,6 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://kv-project1-ls.vault.azure.net/"
 		},
-		"AzureSqlDatabase1_properties_typeProperties_server": {
-			"value": "lakshyadeproject1.database.windows.net"
-		},
-		"AzureSqlDatabase1_properties_typeProperties_database": {
-			"value": "lakshyadeproject1db"
-		},
-		"AzureSqlDatabase1_properties_typeProperties_userName": {
-			"value": "rootlakshya"
-		},
 		"AzureSqlDatabase2_properties_typeProperties_server": {
 			"value": "lakshyadeproject1.database.windows.net"
 		},
@@ -39,13 +30,16 @@
 			"value": "rootlakshya"
 		},
 		"SqlServer1_properties_typeProperties_server": {
-			"value": "lakshyadeproject1"
+			"value": "lakshyadeproject1.database.windows.net"
 		},
 		"SqlServer1_properties_typeProperties_database": {
 			"value": "lakshyadeproject1db"
 		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"value": "rootlakshya"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0621-042600-knehz7v0"
 		}
 	}
 }
